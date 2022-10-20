@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Lista } from './lista/entities/lista.entity';
+import { ListaModule } from './lista/lista.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { Lista } from './lista/entities/lista.entity';
       database: 'db_todolist',
       entities: [Lista],
       synchronize: true,
-    })
+    }),
+    ListaModule
   ],
   controllers: [],
   providers: [],
